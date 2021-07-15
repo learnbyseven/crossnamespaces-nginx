@@ -1,0 +1,17 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: blue-vs
+  namespace: blue
+spec:
+  host: cafe.example.com
+  upstreams:
+  - name: blue
+    service: blue-svc
+    port: 8081
+  routes:
+  - path: /
+    action:
+      pass: blue
+  - path: /api/v1/users
+    route: restapi/restapi-vsr
