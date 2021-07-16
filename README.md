@@ -6,6 +6,7 @@ crossnamespaces-nginx
 
 
 $ git clone https://github.com/learnbyseven/crossnamespaces-nginx
+
 $ kubectl create -f crossnamespaces-nginx/
 
 # Testing
